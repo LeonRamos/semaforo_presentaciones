@@ -62,7 +62,6 @@
       isolation: isolate;
     }
 
-    /* Capa de vectores suaves */
     .app::before,
     .app::after {
       content: '';
@@ -352,7 +351,13 @@
         min-height: 100dvh;
         gap: 0;
       }
-      .header { display: none; }
+      /* MOSTRAR header también en móvil */
+      .header {
+        display: flex;
+        padding: 12px 14px;
+        border-radius: 0;
+        box-shadow: none;
+      }
       .main {
         grid-template-columns: 1fr;
         min-height: 100dvh;
@@ -368,11 +373,12 @@
         justify-content: start;
         align-content: start;
       }
+      /* SEMÁFORO MÁS BAJO PARA DEJAR ESPACIO AL HEADER+BOTONES */
       .semaphore {
         width: 90vw;
-        height: 90dvh;
+        height: 60dvh;
         max-width: none;
-        max-height: 90dvh;
+        max-height: 60dvh;
         aspect-ratio: auto;
         padding: 3dvh 5vw;
         gap: 2.5dvh;
@@ -402,7 +408,8 @@
       .semaphore-wrap { min-height: 100dvh; }
       .semaphore {
         width: 90vw;
-        height: 90dvh;
+        height: 60dvh;       /* igual que arriba para iPhone pequeños */
+        max-height: 60dvh;
       }
     }
 
@@ -417,11 +424,11 @@
       <div class="brand">
         <div class="logo" aria-label="Logo del semáforo">
           <img src="3.png"
-                alt="Logo semáforo"
-                style="height: 3.8rem; width: auto; display: block;" />
+               alt="Logo semáforo"
+               style="height: 3.8rem; width: auto; display: block;" />
         </div>
         <div>
-          <h1>Concurso de Proyectos de Innovación </h1>
+          <h1>Concurso de Proyectos de Innovación</h1>
           <p class="subtitle">Semáforo con tres bloques de 5 minutos: presentación, demostración del prototipo y preguntas.</p>
         </div>
       </div>
@@ -495,8 +502,6 @@
             <div class="microbar"><span id="mini-2"></span></div>
           </article>
         </section>
-
-      
 
         <section class="final-screen" id="finalScreen" aria-live="polite">
           <h2 style="margin: 0 0 10px; font-size: 1.8rem;">Evaluación finalizada</h2>
